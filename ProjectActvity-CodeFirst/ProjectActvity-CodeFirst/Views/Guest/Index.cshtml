@@ -2,6 +2,7 @@
 
 @{
     Layout = null;
+    <link rel="stylesheet" href="/css/StyleHomeIndex.css" />
 }
 
 <!DOCTYPE html>
@@ -12,10 +13,8 @@
     <title>Index</title>
 </head>
 <body>
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<p style="background-color:white">Convidados</p>
+<table style="margin:auto" class="table">
     <thead>
         <tr>
             <th>
@@ -63,5 +62,6 @@
 }
     </tbody>
 </table>
+<p><a style="color:white" asp-action="Create">Create new Guest</a></p>
 </body>
 </html>

@@ -46,3 +46,18 @@ img {
     margin-left: auto;
     margin-right: auto
 }
+th {
+    background-color: aqua;
+}
+
+td {
+    font-weight: bold;
+    background-color: white;
+}
+
+td, th {
+    padding: .7em;
+    margin: 0;
+    /*border: 1px solid #ccc;*/
+    text-align: center;
+}
