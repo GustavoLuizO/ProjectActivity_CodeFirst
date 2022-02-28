@@ -54,6 +54,8 @@ namespace ProjectActvity_CodeFirst.Controllers
         {
             return View(listGuests.Where(m => m.guestId == id).First());
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(Guests Guest)
         {
             listGuests.Remove(listGuests.Where(m => m.guestId == Guest.guestId).First());
