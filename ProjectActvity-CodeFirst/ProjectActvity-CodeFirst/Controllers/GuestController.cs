@@ -49,5 +49,15 @@ namespace ProjectActvity_CodeFirst.Controllers
             listGuests.Add(Guest);
             return RedirectToAction("Index");
         }
+
+        public IActionResult Delete(long id)
+        {
+            return View(listGuests.Where(m => m.guestId == id).First());
+        }
+        public ActionResult Delete(Guests Guest)
+        {
+            listGuests.Remove(listGuests.Where(m => m.guestId == Guest.guestId).First());
+            return RedirectToAction("Index");
+        }
     }
 }
