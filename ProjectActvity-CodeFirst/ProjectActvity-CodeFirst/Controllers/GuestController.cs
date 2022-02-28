@@ -36,5 +36,18 @@ namespace ProjectActvity_CodeFirst.Controllers
             guests.guestId = listGuests.Select(m => m.guestId).Max() + 1;
             return RedirectToAction("Index");
         }
+
+        public IActionResult Edit(long id)
+        {
+            return View(listGuests.Where(m => m.guestId == id).First());
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Guests Guest)
+        {
+            listGuests.Remove(listGuests.Where(m => m.guestId == Guest.guestId).First());
+            listGuests.Add(Guest);
+            return RedirectToAction("Index");
+        }
     }
 }
