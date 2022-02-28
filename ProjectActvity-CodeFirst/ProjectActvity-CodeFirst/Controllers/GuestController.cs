@@ -61,5 +61,9 @@ namespace ProjectActvity_CodeFirst.Controllers
             listGuests.Remove(listGuests.Where(m => m.guestId == Guest.guestId).First());
             return RedirectToAction("Index");
         }
+        public IActionResult Details(long id)
+        {
+            return View(listGuests.Where(m => m.guestId == id).First());
+        }
     }
 }
